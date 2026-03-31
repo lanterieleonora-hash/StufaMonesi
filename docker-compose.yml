@@ -1,0 +1,5 @@
+services:
+  la-mia-app:
+    build: .
+    ports:
+      - "8080:80" #devo adattare queste porte a quelle della mia web app
