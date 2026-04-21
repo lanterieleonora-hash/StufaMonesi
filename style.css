@@ -34,9 +34,9 @@ body {
 .status-accesa { color: #388e3c; font-weight: bold; }
 
 .controls {
-    display: flex;
+    display: flex; /*si organizzano i dati all'interno in modo flessibile*/
     flex-direction: column;
-    gap: 15px;
+    gap: 15px; /* spazio tra righe/colonne*/
     margin-bottom: 20px;
 }
 
