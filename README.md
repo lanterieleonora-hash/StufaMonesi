@@ -2,13 +2,13 @@
 # Sistema di Controllo Remoto per Stufa a Pellet via Contatto Pulito
 
 ## Panoramica del Progetto
-Questo progetto permette di gestire l'accensione e lo spegnimento di una stufa da remoto tramite una **web app**. 
-Il sistema sfrutta l'ingresso "Termostato Esterno" (o Contatto Pulito / Morsetto T.A.) presente sulla scheda madre della maggior parte delle stufe a pellet. Collegando un relè Wi-Fi a questo ingresso, possiamo comandare la stufa simulando la richiesta di calore di un termostato.
+Questo progetto permette di gestire l'accensione e lo spegnimento di una stufa da remoto tramite una web app. 
+Il sistema sfrutta l'ingresso "Termostato Esterno" (o Contatto Pulito / Morsetto T.A.) presente sulla scheda madre della stufa a pellet. Collegando un relè Wi-Fi a questo ingresso, possiamo comandare la stufa simulando la richiesta di calore di un termostato.
 
 ## Componenti Principali
 
 ### Relè Smart (Contatto Pulito)
-- **Consigliato:** Shelly Plus 1 o Sonoff Basic R3 (versione Dry Contact).
+- **Consigliato:** Shelly Plus 1.
 - Il relè si collega al Wi-Fi di casa ed espone delle API HTTP.
 - I morsetti I/O (Input/Output a potenziale zero) del relè vanno collegati ai morsetti del termostato esterno della stufa.
 
@@ -24,6 +24,3 @@ Il sistema lavora su due livelli di conferma per garantire la massima affidabili
 
 ## Web App (Docker)
 L'interfaccia utente è servita tramite un container Nginx leggero che ospita i file statici (HTML, CSS, JS).
-
-## link
-per aprire la web app andare sull'indirizzo: http://localhost:8080
