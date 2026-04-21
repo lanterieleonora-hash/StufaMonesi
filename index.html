@@ -1,47 +1,98 @@
-<!DOCTYPE html>
-<html lang="it">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html> <!-- documento HTML5 -->
+
+<html lang="it"> <!-- lingua italiana -->
+
+<head> <!-- configurazione iniziale documento -->
+
+    <meta charset="UTF-8"> <!-- codifica Unicode x caratteri speciali, accenti ed emoji -->
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- rende il sito adattabile su tutti i dispositivi -->
+
     <title>Stufa Monesi - Controllo Avanzato</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    style.css <!-- collegamento al file CSS -->
+
+    https://cdn.jsdelivr.net/npm/chart.jsscript> <!-- libreria Chart.js per vedere i grafici -->
 </head>
-<body>
-    <div class="container">
+
+<body> <!-- corpo del documento-->
+
+    <div class="container"> <!-- "contenitore" di tutta l’interfaccia -->
+
         <h1>Stufa Monesi 🔥</h1>
-        
-        <div class="status-card">
-            <h2>Temperatura Ambiente</h2>
-            <div class="temperature" id="temp-display">--.- °C</div>
-            <p>Stato Contatto: <span id="stato-stufa" class="status-spenta">Connessione in corso... ⏳</span></p>
-            <p id="timer-riscaldamento" style="display: none; font-size: 14px; color: #f57c00; font-weight: bold; margin-top: 10px;"></p>
-        </div>
 
-        <div class="controls">
-            <button id="btn-accendi" class="btn btn-green" disabled>ACCENDI STUFA</button>
-            <button id="btn-spegni" class="btn btn-red" disabled>SPEGNI STUFA</button>
-        </div>
+        <div class="status-card"> <!-- scheda che mostra lo stato della stufa -->
 
-        <div class="chart-container">
-            <canvas id="tempChart"></canvas>
-        </div>
+            <h2>Temperatura Ambiente</h2> 
 
-        <div class="history-card">
-            <h3>Ricerca Storico 🕒</h3>
-            <p>Controlla la temperatura in un'ora precisa:</p>
-            <div class="history-controls">
-                <input type="time" id="input-orario" class="input-time">
-                <button id="btn-cerca-storico" class="btn-cerca">Cerca</button>
+            <div class="temperature" id="temp-display">
+                --.- °C
             </div>
+            <!-- visualizzazione della temperatura attuale (aggiornata via JavaScript) -->
+
+            <p>
+                Stato Contatto:
+                <span id="stato-stufa" class="status-spenta">
+                    Connessione in corso... ⏳
+                </span>
+            </p>
+            <!-- stato stufa: accesa, spenta , in connessione -->
+
+            <p id="timer-riscaldamento"
+               style="display: none; font-size: 14px; color: #f57c00; font-weight: bold; margin-top: 10px;">
+            </p>
+            <!-- timer di riscaldamento (inizialmente nascosto) -->
+
+        </div>
+
+        <div class="controls"> <!-- area dei comandi per accendere e spegnere la stufa -->
+
+            <button id="btn-accendi" class="btn btn-green" disabled>
+                ACCENDI STUFA
+            </button>
+            <!-- pulsante per accendere la stufa -->
+
+            <button id="btn-spegni" class="btn btn-red" disabled>
+                SPEGNI STUFA
+            </button>
+            <!-- pulsante per spegnere la stufa -->
+        </div>
+
+        <div class="chart-container"> <!-- contenitore grafico -->
+
+            <canvas id="tempChart"></canvas> <!-- area grafica usata da Chart.js per l’andamento della temperatura -->
+        </div>
+
+        <div class="history-card"> <!-- scheda per la consultazione dello storico -->
+
+            <h3>Ricerca Storico 🕒</h3>
+
+            <p>Controlla la temperatura in un'ora precisa:</p>
+
+            <div class="history-controls"> <!-- controlli per la ricerca nello storico -->
+
+                <input type="time" id="input-orario" class="input-time"> <!-- campo per scegliere l’orario -->
+
+                <button id="btn-cerca-storico" class="btn-cerca">
+                    Cerca
+                </button>
+                <!-- pulsante per avviare la ricerca -->
+            </div>
+
             <div id="risultato-storico" class="risultato-storico"></div>
+            <!-- risultato della ricerca nello storico -->
+
         </div>
 
         <div id="notifiche" class="notifiche">
             In attesa di connessione col relè...
         </div>
+        <!-- area notifiche di sistema -->
+
     </div>
 
-    <script src="script.js"></script>
+    script.jsscript>
+    <!-- file JavaScript che gestisce logica, eventi e dati -->
+
 </body>
 </html>
